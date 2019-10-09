@@ -4,6 +4,13 @@
 
 This module consists of information about the artist and track as well as the ability to infinitely scroll through comments and post comments that reference a time within the displayed track.
 
+
+## Related Projects
+
+- https://github.com/4-ever-young/soundclout-active-player-module.git
+- https://github.com/4-ever-young/soundclout-active-player-module.git
+- https://github.com/4-ever-young/Sidebar-module.git
+
 ## Table of Contents
 
 1. [Usage](#Usage)
