@@ -27,48 +27,48 @@ The user will be able to view track and artist information, post comments, like 
 
 ### POST
 POST /song
--Add a new song under the song collection
--Data goes in the body
+- Add a new song under the song collection
+- Data goes in the body
 
 POST /song/:song_id/comments
--Add a comment in the comments collection for the specific song
--Data goes in the body
+- Add a comment in the comments collection for the specific song
+- Data goes in the body
 
 ### GET
 GET /song
--Get all songs
+- Get all songs
 
 GET /song/:song_id
--Get the song with id
+- Get the song with id
 
 GET /song/:song_id/comments
--Get all the comments for specific song id
+- Get all the comments for specific song id
 
 GET /song/:song_id/comments/:comment_id
--Get the specific comment from the specific song
+- Get the specific comment from the specific song
 
 ### DELETE
 DELETE /song
--delete all songs
+- delete all songs
 
 DELETE /song/:song_id
--delete specific song
+- delete specific song
 
 DELETE /song/:song_id/comments
--delete all comments from specific song
+- delete all comments from specific song
 
 DELETE /song/:song_id/comments/:comment_id/
--delete specific comment from specific song
+- delete specific comment from specific song
 
 
 ### PATCH
 PATCH /song/:song_id'
--update specific song
--Data goes in the body
+- update specific song
+- Data goes in the body
 
 PATCH /song/:song_id/comments/:comment_id
--update specific comment from specific song
--Data goes in the body
+- update specific comment from specific song
+- Data goes in the body
 
 
 ## Requirements
