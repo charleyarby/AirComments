@@ -26,33 +26,39 @@ The user will be able to view track and artist information, post comments, like 
 
 
 ### POST
-'localhost:4000/postsong/:song_id'
- -add song to database
+POST /song
+-Add a new song under the song collection
 
-'localhost:4000/postcomment/:song_id/:comment_id/'
- -add comments to current song
+POST /song/:song_id/comments
+-Add a comment in the comments collection for the specific song
 
 ### GET
-'localhost:4000/getsong/:song_id'
- -get all info for specific song
+GET /song
+-Get all songs
 
-'localhost:4000/getcomment/:song_id'
- -get all comment for specific song
+GET /song/:song_id
+-Get the song with id
+
+GET /song/:song_id/comments
+-Get all the comments for specific song id
+
+GET /song/:song_id/comments/:comment_id
+-Get the specific comment from the specific song
 
 ### DELETE
-'localhost:4000/deletesong/:song_id'
- -delete specific song
+DELETE /song/:song_id
+-delete specific song
 
-'localhost:4000/deletecomment/:comment_id/'
- -delete specific comment
+DELETE /song/:song_id/comments/:comment_id/
+ -delete specific comment from specific song
 
 
-### UPDATE
-'localhost:4000/updatesong/:song_id'
- -update specific song
+### PATCH
+PATCH /song/:song_id'
+-update specific song
 
-'localhost:4000/updatecomment/:comment_id'
- -update specific comment
+PATCH /song/:song_id/comments/:comment_id
+-update specific comment from specific song
 
 
 
