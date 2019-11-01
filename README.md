@@ -42,6 +42,7 @@ Get the song with id
 **Response**
 
 | Name | Type | Description |
+| ---- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for song. |
 | 'song_name' | 'str' | _Required_. Name of song. |
 | 'artist_id' | 'int' | _Required_. Identifier for song artist. |
@@ -57,6 +58,7 @@ GET /song/:song_id/comments
 Get the specific comment from the specific song
 **Response**
 | Name | Type | Description |
+| ---- | ---- | ----------- |
 | 'comment_id' | 'int' | _Required_. Identifier for comment. |
 | 'song_id' | 'int' | _Required_. Identifier for which song this comment belongs to. |
 | 'user_id' | 'int' | _Required_. Identify which user wrote the comment |
