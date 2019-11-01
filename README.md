@@ -28,8 +28,8 @@ The user will be able to view track and artist information, post comments, like 
 ### POST
 
 #### POST /song
-Add a new song under the song collection
-JSON object goes in the body
+Add a new song under the song collection.
+JSON object goes in the body.
 
 **Body**
 
@@ -45,8 +45,8 @@ JSON object goes in the body
 
 
 #### POST /song/:song_id/comments
-Add a comment in the comments collection for the specific song
-JSON Object goes in the body
+Add a comment in the comments collection for the specific song.
+JSON Object goes in the body.
 
 **Body**
 
@@ -63,7 +63,7 @@ JSON Object goes in the body
 ### GET
 
 #### GET /song/:song_id
-Get the song with id. Returns a JSON object
+Get the song with id. Returns a JSON object.
 **Parameters**
 
 | Name  | Type | Description |
@@ -83,7 +83,7 @@ Get the song with id. Returns a JSON object
 | 'language_rating' | 'str' | _Required_. Rates the song. |
 
 #### GET /song/:song_id/comments
-Get all the comments for specific song id. Return array of JSON object
+Get all the comments for specific song id. Return array of JSON object.
 **Parameter**
 
 | Name  | Type | Description |
@@ -106,7 +106,7 @@ Get all the comments for specific song id. Return array of JSON object
 
 
 #### DELETE /song/:song_id
-delete specific song
+delete specific song.
 **Parameter**
 
 | Name  | Type | Description |
@@ -114,7 +114,7 @@ delete specific song
 | 'song_id' | 'int' | _Required_. Identifier for the song. |
 
 #### DELETE /song/:song_id/comments
-delete all comments from specific song
+delete all comments from specific song.
 **Parameter**
 
 | Name  | Type | Description |
@@ -122,7 +122,7 @@ delete all comments from specific song
 | 'song_id' | 'int' | _Required_. Identifier for the song. |
 
 #### DELETE /song/:song_id/comments/:comment_id/
-delete specific comment from specific song
+delete specific comment from specific song.
 **Parameter**
 
 | Name  | Type | Description |
@@ -132,8 +132,8 @@ delete specific comment from specific song
 
 ### PATCH
 #### PATCH /song/:song_id'
-update specific song
-JSON object goes in body
+update specific song.
+JSON object goes in body.
 **Parameter**
 
 | Name  | Type | Description |
@@ -156,8 +156,8 @@ JSON object goes in body
 
 
 #### PATCH /song/:song_id/comments/:comment_id
-update specific comment from specific song
-Data goes in the body
+update specific comment from specific song.
+Data goes in the body.
 **Parameter**
 
 | Name  | Type | Description |
