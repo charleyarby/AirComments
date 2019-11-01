@@ -32,6 +32,7 @@ Add a new song under the song collection
 JSON object goes in the body
 
 **Body**
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for song. |
