@@ -56,12 +56,14 @@ GET /song/:song_id/comments
 
 #### GET /song/:song_id/comments/:comment_id
 Get the specific comment from the specific song
+
 **Response**
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | 'comment_id' | 'int' | _Required_. Identifier for comment. |
 | 'song_id' | 'int' | _Required_. Identifier for which song this comment belongs to. |
-| 'user_id' | 'int' | _Required_. Identify which user wrote the comment |
+| 'user_id' | 'int' | _Required_. Identify which user wrote the comment. |
 | 'content' | 'str' | _Required_. Comment content. |
 | 'time' | 'int' | _Required_. Timestamp for comment. |
 | 'track_time' | 'int' | _Reuiqred_. Track time stamp for comment. |
