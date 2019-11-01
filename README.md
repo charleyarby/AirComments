@@ -35,17 +35,34 @@ POST /song/:song_id/comments
 - Data goes in the body
 
 ### GET
-GET /song
-- Get all songs
 
-GET /song/:song_id
-- Get the song with id
+#### GET /song/:song_id
+Get the song with id
+
+**Response**
+
+| Name | Type | Description |
+| 'song_id' | 'int' | _Required_. Identifier for song. |
+| 'song_name' | 'str' | _Required_. Name of song. |
+| 'artist_id' | 'int' | _Required_. Identifier for song artist. |
+| 'release_date' | 'str' | _Required_. Release date of song. |
+| 'P-line' | 'str' | _Required_. Owner to rights of sound recording. |
+| 'C-line' | 'str' | _Required_. Copyright of the music. |
+| 'language_rating' | 'str' | _Required_. Rates the song. |
 
 GET /song/:song_id/comments
 - Get all the comments for specific song id
 
-GET /song/:song_id/comments/:comment_id
-- Get the specific comment from the specific song
+#### GET /song/:song_id/comments/:comment_id
+Get the specific comment from the specific song
+**Response**
+| Name | Type | Description |
+| 'comment_id' | 'int' | _Required_. Identifier for comment. |
+| 'song_id' | 'int' | _Required_. Identifier for which song this comment belongs to. |
+| 'user_id' | 'int' | _Required_. Identify which user wrote the comment |
+| 'content' | 'str' | _Required_. Comment content. |
+| 'time' | 'int' | _Required_. Timestamp for comment. |
+| 'track_time' | 'int' | _Reuiqred_. Track time stamp for comment. |
 
 ### DELETE
 DELETE /song
