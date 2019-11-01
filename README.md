@@ -30,6 +30,7 @@ The user will be able to view track and artist information, post comments, like 
 #### POST /song
 Add a new song under the song collection
 JSON object goes in the body
+
 **Body**
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -63,6 +64,7 @@ JSON Object goes in the body
 #### GET /song/:song_id
 Get the song with id. Returns a JSON object
 **Parameters**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for the song. |
@@ -82,6 +84,7 @@ Get the song with id. Returns a JSON object
 #### GET /song/:song_id/comments
 Get all the comments for specific song id. Return array of JSON object
 **Parameter**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for the song. |
@@ -101,23 +104,26 @@ Get all the comments for specific song id. Return array of JSON object
 ### DELETE
 
 
-DELETE /song/:song_id
+#### DELETE /song/:song_id
 delete specific song
 **Parameter**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for the song. |
 
-DELETE /song/:song_id/comments
+#### DELETE /song/:song_id/comments
 delete all comments from specific song
 **Parameter**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for the song. |
 
-DELETE /song/:song_id/comments/:comment_id/
+#### DELETE /song/:song_id/comments/:comment_id/
 delete specific comment from specific song
 **Parameter**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'comment_id' | 'int' | _Required_. Identifier for the comment. |
@@ -128,12 +134,14 @@ delete specific comment from specific song
 update specific song
 JSON object goes in body
 **Parameter**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for the comment. |
 
 
 **Body**
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | 'song_id' | 'int' | _Required_. Identifier for song. |
@@ -150,6 +158,7 @@ JSON object goes in body
 update specific comment from specific song
 Data goes in the body
 **Parameter**
+
 | Name  | Type | Description |
 | ----- | ---- | ----------- |
 | 'comment_id' | 'int' | _Required_. Identifier for the comment. |
