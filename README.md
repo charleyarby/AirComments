@@ -26,18 +26,46 @@ The user will be able to view track and artist information, post comments, like 
 
 
 ### POST
-POST /song
-- Add a new song under the song collection
-- Data goes in the body
 
-POST /song/:song_id/comments
-- Add a comment in the comments collection for the specific song
-- Data goes in the body
+#### POST /song
+Add a new song under the song collection
+JSON object goes in the body
+**Body**
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for song. |
+| 'song_name' | 'str' | _Required_. Name of song. |
+| 'artist_id' | 'int' | _Required_. Identifier for song artist. |
+| 'release_date' | 'str' | _Required_. Release date of song. |
+| 'P-line' | 'str' | _Required_. Owner to rights of sound recording. |
+| 'C-line' | 'str' | _Required_. Copyright of the music. |
+| 'language_rating' | 'str' | _Required_. Rates the song. |
+
+
+#### POST /song/:song_id/comments
+Add a comment in the comments collection for the specific song
+JSON Object goes in the body
+
+**Body**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| 'comment_id' | 'int' | _Required_. Identifier for comment. |
+| 'song_id' | 'int' | _Required_. Identifier for which song this comment belongs to. |
+| 'user_id' | 'int' | _Required_. Identify which user wrote the comment. |
+| 'content' | 'str' | _Required_. Comment content. |
+| 'time' | 'int' | _Required_. Timestamp for comment. |
+| 'track_time' | 'int' | _Reuiqred_. Track time stamp for comment. |
+
 
 ### GET
 
 #### GET /song/:song_id
-Get the song with id
+Get the song with id. Returns a JSON object
+**Parameters**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for the song. |
 
 **Response**
 
@@ -51,11 +79,13 @@ Get the song with id
 | 'C-line' | 'str' | _Required_. Copyright of the music. |
 | 'language_rating' | 'str' | _Required_. Rates the song. |
 
-GET /song/:song_id/comments
-- Get all the comments for specific song id
+#### GET /song/:song_id/comments
+Get all the comments for specific song id. Return array of JSON object
+**Parameter**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for the song. |
 
-#### GET /song/:song_id/comments/:comment_id
-Get the specific comment from the specific song
 
 **Response**
 
@@ -69,27 +99,71 @@ Get the specific comment from the specific song
 | 'track_time' | 'int' | _Reuiqred_. Track time stamp for comment. |
 
 ### DELETE
-DELETE /song
-- delete all songs
+
 
 DELETE /song/:song_id
-- delete specific song
+delete specific song
+**Parameter**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for the song. |
 
 DELETE /song/:song_id/comments
-- delete all comments from specific song
+delete all comments from specific song
+**Parameter**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for the song. |
 
 DELETE /song/:song_id/comments/:comment_id/
-- delete specific comment from specific song
+delete specific comment from specific song
+**Parameter**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'comment_id' | 'int' | _Required_. Identifier for the comment. |
 
 
 ### PATCH
-PATCH /song/:song_id'
-- update specific song
-- Data goes in the body
+#### PATCH /song/:song_id'
+update specific song
+JSON object goes in body
+**Parameter**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for the comment. |
 
-PATCH /song/:song_id/comments/:comment_id
-- update specific comment from specific song
-- Data goes in the body
+
+**Body**
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| 'song_id' | 'int' | _Required_. Identifier for song. |
+| 'song_name' | 'str' | _Required_. Name of song. |
+| 'artist_id' | 'int' | _Required_. Identifier for song artist. |
+| 'release_date' | 'str' | _Required_. Release date of song. |
+| 'P-line' | 'str' | _Required_. Owner to rights of sound recording. |
+| 'C-line' | 'str' | _Required_. Copyright of the music. |
+| 'language_rating' | 'str' | _Required_. Rates the song. |
+
+
+
+#### PATCH /song/:song_id/comments/:comment_id
+update specific comment from specific song
+Data goes in the body
+**Parameter**
+| Name  | Type | Description |
+| ----- | ---- | ----------- |
+| 'comment_id' | 'int' | _Required_. Identifier for the comment. |
+
+**Body**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| 'comment_id' | 'int' | _Required_. Identifier for comment. |
+| 'song_id' | 'int' | _Required_. Identifier for which song this comment belongs to. |
+| 'user_id' | 'int' | _Required_. Identify which user wrote the comment. |
+| 'content' | 'str' | _Required_. Comment content. |
+| 'time' | 'int' | _Required_. Timestamp for comment. |
+| 'track_time' | 'int' | _Reuiqred_. Track time stamp for comment. |
 
 
 ## Requirements
