@@ -64,6 +64,7 @@ JSON Object goes in the body.
 
 #### GET /song/:song_id
 Get the song with id. Returns a JSON object.
+
 **Parameters**
 
 | Name  | Type | Description |
@@ -84,6 +85,7 @@ Get the song with id. Returns a JSON object.
 
 #### GET /song/:song_id/comments
 Get all the comments for specific song id. Return array of JSON object.
+
 **Parameter**
 
 | Name  | Type | Description |
@@ -107,6 +109,7 @@ Get all the comments for specific song id. Return array of JSON object.
 
 #### DELETE /song/:song_id
 delete specific song.
+
 **Parameter**
 
 | Name  | Type | Description |
@@ -115,6 +118,7 @@ delete specific song.
 
 #### DELETE /song/:song_id/comments
 delete all comments from specific song.
+
 **Parameter**
 
 | Name  | Type | Description |
@@ -123,6 +127,7 @@ delete all comments from specific song.
 
 #### DELETE /song/:song_id/comments/:comment_id/
 delete specific comment from specific song.
+
 **Parameter**
 
 | Name  | Type | Description |
@@ -134,6 +139,7 @@ delete specific comment from specific song.
 #### PATCH /song/:song_id'
 update specific song.
 JSON object goes in body.
+
 **Parameter**
 
 | Name  | Type | Description |
@@ -158,6 +164,7 @@ JSON object goes in body.
 #### PATCH /song/:song_id/comments/:comment_id
 update specific comment from specific song.
 Data goes in the body.
+
 **Parameter**
 
 | Name  | Type | Description |
