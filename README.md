@@ -135,8 +135,8 @@ delete specific comment from specific song.
 | 'comment_id' | 'int' | _Required_. Identifier for the comment. |
 
 
-### PATCH
-#### PATCH /song/:song_id'
+### PUT
+#### PUT /song/:song_id'
 update specific song.
 JSON object goes in body.
 
@@ -151,17 +151,17 @@ JSON object goes in body.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| 'song_id' | 'int' | _Required_. Identifier for song. |
-| 'song_name' | 'str' | _Required_. Name of song. |
-| 'artist_id' | 'int' | _Required_. Identifier for song artist. |
-| 'release_date' | 'str' | _Required_. Release date of song. |
-| 'P-line' | 'str' | _Required_. Owner to rights of sound recording. |
-| 'C-line' | 'str' | _Required_. Copyright of the music. |
-| 'language_rating' | 'str' | _Required_. Rates the song. |
+| 'song_id' | 'int' | _Optional_. Identifier for song. |
+| 'song_name' | 'str' | _Optional_. Name of song. |
+| 'artist_id' | 'int' | _Optional_. Identifier for song artist. |
+| 'release_date' | 'str' | _Optional_. Release date of song. |
+| 'P-line' | 'str' | _Optional_. Owner to rights of sound recording. |
+| 'C-line' | 'str' | _Optional_. Copyright of the music. |
+| 'language_rating' | 'str' | _Optional_. Rates the song. |
 
 
 
-#### PATCH /song/:song_id/comments/:comment_id
+#### PUT /song/:song_id/comments/:comment_id
 update specific comment from specific song.
 Data goes in the body.
 
@@ -175,12 +175,12 @@ Data goes in the body.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| 'comment_id' | 'int' | _Required_. Identifier for comment. |
-| 'song_id' | 'int' | _Required_. Identifier for which song this comment belongs to. |
-| 'user_id' | 'int' | _Required_. Identify which user wrote the comment. |
-| 'content' | 'str' | _Required_. Comment content. |
-| 'time' | 'int' | _Required_. Timestamp for comment. |
-| 'track_time' | 'int' | _Reuiqred_. Track time stamp for comment. |
+| 'comment_id' | 'int' | _Optional_. Identifier for comment. |
+| 'song_id' | 'int' | _Optional_. Identifier for which song this comment belongs to. |
+| 'user_id' | 'int' | _Optional_. Identify which user wrote the comment. |
+| 'content' | 'str' | _Optional_. Comment content. |
+| 'time' | 'int' | _Optional_. Timestamp for comment. |
+| 'track_time' | 'int' | _Optional_. Track time stamp for comment. |
 
 
 ## Requirements

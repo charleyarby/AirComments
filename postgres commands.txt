@@ -1,0 +1,3 @@
+
+Postgres copy from csv to table
+COPY comments(song_id, user_id, content, time_stamp, track_time) FROM '/mnt/c/Users/charl/hrext/SDC/AirComments/data/data.csv' DELIMITER ',' CSV HEADER;

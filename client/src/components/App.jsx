@@ -30,7 +30,7 @@ class App extends React.Component {
         var comment = this.state.currentComment
         console.log(comment)
         //console.log(this.state, 'this is currentComment')
-        Axios.post('/newcomment', newcomment)
+        Axios.post('/newcomment', comment)
         .then((comment) => {
             this.setState({
                 comments: comments.data,
