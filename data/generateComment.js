@@ -25,8 +25,8 @@ const dataGen =  () => {
   for(var i=1; i<=100000; i++) {
     var numSentence = Math.ceil(Math.abs(commentLengthNormal())*10)
     var comment = faker.lorem.sentences(numSentence)
-    var songID=randomNormal({mean: 5000000, dev:2000000})
-    var userID=1400000000;
+    var songID=randomNormal({mean: 5000000, dev:2000000});
+    var userID=randomNormal({mean: 7000000, dev:2000000});
     // while(songID>10000000){
     // var songID = Math.ceil(Math.abs(songNormal())*10000000)
     // }
@@ -49,11 +49,15 @@ const dataGen =  () => {
 const userGen =  () => {
   writer.pipe(fs.createWriteStream('../generatedData/user.csv'));
   for(var i=1; i<=14000000; i++) {
+        if(i%100000===0) {
+      console.log((i/(10*million)*100).toFixed(2) +'%')
+    }
     var numSentence = Math.ceil(Math.abs(commentLengthNormal())*10)
     var comment = faker.lorem.sentences(numSentence)
     var songID=1000000000;
     var userID=1400000000;
     writer.write({
+        id:i,
         username: faker.internet.userName(),
         user_pic: faker.image.avatar(),
     })
@@ -95,6 +99,6 @@ const songGen =  () => {
 }
 //songGen()
 //artistGen();
-//userGen();
+userGen();
 
-dataGen();
+//dataGen();

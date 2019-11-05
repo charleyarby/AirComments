@@ -16,7 +16,7 @@ const million = 1000000
 var randomNormal = require('random-normal');
 //var normal = distributions.Normal(0.3 /* mean */, 1 /* std deviation */);
 const commentLengthNormal = random.normal(0.2, 0.1)
-const writeUsers = fs.createWriteStream('../generatedData/comments.csv');
+const writeUsers = fs.createWriteStream('../generatedData/comments300M.csv');
 writeUsers.write('song_id,username_id,content,time_stamp,track_time\n', 'utf8');
 
 function generateSong(writer, encoding, callback) {
