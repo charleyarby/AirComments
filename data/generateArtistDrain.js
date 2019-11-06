@@ -6,17 +6,17 @@ const momentRandom = require('moment-random');
 const random = require('random')
 const million = 1000000
 var randomNormal = require('random-normal');
-const writeArtist = fs.createWriteStream('../generatedData/artist.csv');
+const writeArtist = fs.createWriteStream('../generatedData/artists1M.csv');
 writeArtist.write('artist_name,artist_pic\n', 'utf8');
 
 function generateArtist(writer, encoding, callback) {
-  let i = 14*million;
+  let i = 1*million;
   let id = 0;
   function write() {
     let ok = true;
     do {
       if(i%100000===0) {
-        console.log((id/(14*million)*100).toFixed(2) +'%')
+        console.log((id/(1*million)*100).toFixed(2) +'%')
       }
       i -= 1;
       id += 1;

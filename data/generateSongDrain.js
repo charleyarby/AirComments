@@ -19,15 +19,35 @@ const commentLengthNormal = random.normal(0.2, 0.1)
 
 const writeUsers = fs.createWriteStream('../generatedData/song.csv');
 writeUsers.write('artist_id,track_name,release_date,p_line,c_line,language_rating\n', 'utf8');
-
+var startTime = Date.now();
 function generateSong(writer, encoding, callback) {
-  let i = 10*million;
+  let i = 11*million;
   let id = 0;
   function write() {
     let ok = true;
     do {
-      if(i%100000===0) {
-        console.log((id/(10*million)*100).toFixed(2) +'%')
+      if(i%100000===0 && id!==0) {
+        var hour=0;
+        var min=0;
+        var sec=0
+        var end = Date.now();
+       // console.log(end, 'this is end')
+        console.log((id/(11*million)*100).toFixed(2) +'%')
+        var ms = end - startTime;
+        //console.log(ms + ' in ms');
+       // console.log(id, 'this is id')
+        var timeRemaining = ms / (id/((11*million-id)))
+       // console.log((timeRemaining/1000).toFixed(2) + " sec left")
+        var timeSec = Math.round(timeRemaining/1000)
+        while(timeSec>=3600) {
+          hour++
+          timeSec = timeSec-3600;
+        }
+        while(timeSec>=60) {
+          min++
+          timeSec = timeSec-60;
+        }
+        console.log(hour + ' hours ' + min + ' min ' + timeSec + ' secs')
       }
       i -= 1;
       id += 1;
@@ -48,9 +68,9 @@ function generateSong(writer, encoding, callback) {
       while(c_line.includes(',')) {
         c_line = c_line.replace(',', '')
       }
-      var artist_id=Math.ceil(Math.abs(randomNormal({mean: 7000000, dev:2000000})));
-      while(artist_id>14000000){
-        artist_id = Math.ceil(Math.abs(randomNormal({mean: 7000000, dev:2000000})));
+      var artist_id=Math.ceil(Math.abs(randomNormal({mean: 0.5*million, dev:0.2*million})));
+      while(artist_id>1*million){
+        artist_id = Math.ceil(Math.abs(randomNormal({mean: 0.5*million, dev:0.2*million})));
       }
  
       const data = `${artist_id},${track_name},${date},${p_line},${c_line},${language_rating}\n`;

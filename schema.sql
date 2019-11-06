@@ -55,3 +55,25 @@ CREATE TABLE reposts (
   PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS replies;
+CREATE TABLE replies (
+  id serial,
+  comment_id INTEGER NOT NULL,
+  username_id INTEGER NOT NULL,
+  content TEXT NOT NULL,
+  PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS followings;
+CREATE TABLE followings (
+  id serial,
+  username_id INTEGER NOT NULL,
+  artist_id INTEGER NOT NULL,
+  PRIMARY KEY (id)
+);
+
+ALTER TABLE likes
+ADD CONSTRAINT user_fk FOREIGN KEY (username_id) REFERENCES users (id);   
+
+ALTER TABLE likes
+ADD CONSTRAINT song_fk FOREIGN KEY (song_id) REFERENCES songs (id);    
