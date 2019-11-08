@@ -29,8 +29,8 @@ const lorem = new LoremIpsum({
     min: 1
   }
 });
-const writeUsers = fs.createWriteStream('../generatedData/commentsTest.csv');
-writeUsers.write('song_id,username_id,content,time_stamp,track_time\n', 'utf8');
+const writeUsers = fs.createWriteStream('../generatedData/commentsTestCass100M.csv');
+writeUsers.write('song_id|id|username|user_pic_url|content|time_posted|track_time\n', 'utf8');
 var startTime = Date.now();
 console.log(startTime, 'this is start')
 function generateSong(writer, encoding, callback) {
@@ -47,20 +47,18 @@ function generateSong(writer, encoding, callback) {
       var date = momentRandom(end, start).format("YYYYMMDD")
       var year = date.slice(0,4)
       var username = faker.internet.userName();
+      var user_pic = faker.image.avatar();
       var numWords = Math.ceil(Math.random()*3)
       var track_name = faker.lorem.words(numWords);
       var comment = lorem.generateParagraphs(1);
       var song_id=Math.ceil(Math.abs(randomNormal({mean: 5*million, dev:2*million})));
-      var username_id=Math.ceil(Math.abs(randomNormal({mean: 7*million, dev:2*million})));
       while(song_id>10*million){
         song_id = Math.ceil(Math.abs(randomNormal({mean: 5*million, dev:2*million})));
       }
-      while(username_id>14*million) {
-        username_id = Math.ceil(Math.abs(randomNormal({mean: 7*million, dev:2*million})));
-      }
+
       var time_stamp = momentRandom().format("YYYYMMDD");
       var track_time = Math.ceil(Math.random()*400);
-      const data = `${song_id},${username_id},${comment},${time_stamp},${track_time}\n`;
+      const data = `${song_id}|${id}|${username}|${user_pic}|${comment}|${time_stamp}|${track_time}\n`;
       if (i === 0) {
         writer.write(data, encoding, callback);
       } else {
@@ -85,9 +83,9 @@ generateSong(writeUsers, 'utf-8', () => {
 var estimateTime = function(id) {
         var hour=0;
         var min=0;
-        var sec=0
+        var sec=0;
         var end = Date.now();
-        console.log(end, 'this is end')
+       // console.log(end, 'this is end')
         console.log((id/(100*million)*100).toFixed(2) +'%')
         var ms = end - startTime;
         //console.log(ms + ' in ms');

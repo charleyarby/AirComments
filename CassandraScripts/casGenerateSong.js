@@ -21,7 +21,7 @@ const LoremIpsum = require("lorem-ipsum").LoremIpsum;
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
-    max: 1,
+    max: 2,
     min: 1
   },
   wordsPerSentence: {
@@ -29,12 +29,12 @@ const lorem = new LoremIpsum({
     min: 1
   }
 });
-const writeUsers = fs.createWriteStream('../generatedData/commentsTest.csv');
-writeUsers.write('song_id,username_id,content,time_stamp,track_time\n', 'utf8');
+const writeSong = fs.createWriteStream('../generatedData/SongCass10M.csv');
+writeSong.write('song_id,username_id,content,time_stamp,track_time\n', 'utf8');
 var startTime = Date.now();
 console.log(startTime, 'this is start')
 function generateSong(writer, encoding, callback) {
-  let i = 100*million;
+  let i = 10*million;
   let id = 0;
   function write() {
     let ok = true;
@@ -47,20 +47,21 @@ function generateSong(writer, encoding, callback) {
       var date = momentRandom(end, start).format("YYYYMMDD")
       var year = date.slice(0,4)
       var username = faker.internet.userName();
+      var user_pic = faker.image.avatar();
       var numWords = Math.ceil(Math.random()*3)
       var track_name = faker.lorem.words(numWords);
+      var artist_name = faker.name.findName();
       var comment = lorem.generateParagraphs(1);
-      var song_id=Math.ceil(Math.abs(randomNormal({mean: 5*million, dev:2*million})));
-      var username_id=Math.ceil(Math.abs(randomNormal({mean: 7*million, dev:2*million})));
-      while(song_id>10*million){
-        song_id = Math.ceil(Math.abs(randomNormal({mean: 5*million, dev:2*million})));
-      }
-      while(username_id>14*million) {
-        username_id = Math.ceil(Math.abs(randomNormal({mean: 7*million, dev:2*million})));
-      }
+      var company = faker.company.companyName()
+      var company2 = faker.company.companyName()
+      var p_line =`&#8471; ${company}; &#8471; ${year} ${company} LLC under exclusive license to ${company2} Inc.`;
+      var c_line=`&#169; ${year} &#169; ${year} ${company} LLC under exclusive license to ${company2} Inc.`;
+      var language_rating = 'explicit'
+
+
       var time_stamp = momentRandom().format("YYYYMMDD");
       var track_time = Math.ceil(Math.random()*400);
-      const data = `${song_id},${username_id},${comment},${time_stamp},${track_time}\n`;
+      const data = `${id}|${artist_name}|${track_name}|${date}|${p_line}|${c_line}|${language_rating}\n`;
       if (i === 0) {
         writer.write(data, encoding, callback);
       } else {
@@ -78,21 +79,21 @@ function generateSong(writer, encoding, callback) {
 write()
 }
 
-generateSong(writeUsers, 'utf-8', () => {
-  writeUsers.end();
+generateSong(writeSong, 'utf-8', () => {
+  writeSong.end();
 });
 
 var estimateTime = function(id) {
         var hour=0;
         var min=0;
-        var sec=0
+        var sec=0;
         var end = Date.now();
-        console.log(end, 'this is end')
-        console.log((id/(100*million)*100).toFixed(2) +'%')
+       // console.log(end, 'this is end')
+        console.log((id/(10*million)*100).toFixed(2) +'%')
         var ms = end - startTime;
         //console.log(ms + ' in ms');
        // console.log(id, 'this is id')
-        var timeRemaining = ms / (id/((100*million-id)))
+        var timeRemaining = ms / (id/((10*million-id)))
        // console.log((timeRemaining/1000).toFixed(2) + " sec left")
         var timeSec = Math.round(timeRemaining/1000)
         while(timeSec>=3600) {
