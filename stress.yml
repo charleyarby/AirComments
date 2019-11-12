@@ -2,11 +2,11 @@ config:
   target: 'http://localhost:4000'
   phases:
     - duration: 120
-      arrivalRate: 3000
+      arrivalRate: 300
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'
 scenarios:
   - flow:
-    - post:
-        url: "/comments"
+    - get:
+        url: "/songs/3/comments"
