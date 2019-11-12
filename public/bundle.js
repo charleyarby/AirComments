@@ -35664,7 +35664,7 @@ var ShowComments = function ShowComments(props) {
         _react2.default.createElement(
           'div',
           null,
-          '-----------------'
+          '----------------'
         )
       );
     })

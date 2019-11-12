@@ -12,7 +12,7 @@ const ShowComments = (props) => {
 
           <div>content </div>
           <div>{comment.content}</div>
-          <div>-----------------</div>
+          <div>----------------</div>
 
        </div>
     ))}
