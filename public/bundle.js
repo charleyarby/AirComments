@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,7 +74,7 @@
 
 
 var bind = __webpack_require__(12);
-var isBuffer = __webpack_require__(41);
+var isBuffer = __webpack_require__(42);
 
 /*global toString:true*/
 
@@ -605,9 +605,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(46);
+  module.exports = __webpack_require__(47);
 } else {
-  module.exports = __webpack_require__(45);
+  module.exports = __webpack_require__(46);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -616,7 +616,7 @@ if (process.env.NODE_ENV === 'production') {
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(39);
+var content = __webpack_require__(40);
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];
@@ -627,7 +627,7 @@ var options = {}
 options.insert = "head";
 options.singleton = false;
 
-var update = __webpack_require__(52)(content, options);
+var update = __webpack_require__(53)(content, options);
 
 if (content.locals) {
   module.exports = content.locals;
@@ -1561,7 +1561,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(42);
+  var ReactPropTypesSecret = __webpack_require__(43);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -1662,9 +1662,9 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(50);
+  module.exports = __webpack_require__(51);
 } else {
-  module.exports = __webpack_require__(49);
+  module.exports = __webpack_require__(50);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -1694,7 +1694,7 @@ var _ArtistInfo = __webpack_require__(34);
 
 var _ArtistInfo2 = _interopRequireDefault(_ArtistInfo);
 
-var _TrackInfo = __webpack_require__(37);
+var _TrackInfo = __webpack_require__(38);
 
 var _TrackInfo2 = _interopRequireDefault(_TrackInfo);
 
@@ -1708,7 +1708,7 @@ var _axios = __webpack_require__(18);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _ShowComments = __webpack_require__(53);
+var _ShowComments = __webpack_require__(37);
 
 var _ShowComments2 = _interopRequireDefault(_ShowComments);
 
@@ -1844,9 +1844,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(44);
+  module.exports = __webpack_require__(45);
 } else {
-  module.exports = __webpack_require__(43);
+  module.exports = __webpack_require__(44);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -2674,7 +2674,7 @@ var ArtistInfo = function (_React$Component) {
           _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement('img', { className: 'artistPic', src: 'http://localhost:4000/songs/artistpic.jpg' })
+            _react2.default.createElement('img', { className: 'artistPic' })
           ),
           _react2.default.createElement(
             'div',
@@ -2771,7 +2771,7 @@ var Commentbar = function Commentbar(props) {
             _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement('img', { className: 'headshot', src: 'http://localhost:4000/songs/headshot.jpg' })
+                _react2.default.createElement('img', { className: 'headshot' })
             ),
             _react2.default.createElement(
                 'div',
@@ -2953,6 +2953,64 @@ exports.default = Comments;
 
 
 Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ShowComments = function ShowComments(props) {
+  console.log(props);
+  return _react2.default.createElement(
+    'div',
+    null,
+    props.allComments.map(function (comment) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          'Username '
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          comment.username
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          'content '
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          comment.content
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          '-----------------'
+        )
+      );
+    })
+  );
+};
+
+exports.default = ShowComments;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -3030,7 +3088,7 @@ var TrackInfo = function TrackInfo(props) {
 exports.default = TrackInfo;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3053,16 +3111,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('comments'));
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(40)(false);
+exports = module.exports = __webpack_require__(41)(false);
 // Module
 exports.push([module.i, ".comments-component{\n    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n    width: 560px;\n    padding-right: 30px;\n}\n\n.form{\n    width: 483px;\n    height: 23px;\n    margin-top: 6.5px;\n    margin-left: 6px;\n    padding-left: 9px;\n    padding-right: 9px;\n    padding-top: 0px;\n    padding-bottom:0px;\n}\n\n.headshot {\n    height: 40px;\n    width: 40px;\n}\n\n.divider{\n    width:150px;\n    height:auto;\n    display:inline-block;\n}\n\n.dividerLine{\n    width:100%;\n    height:auto;\n    display:inline-block;\n}\n\n\n.flex-container-commentbar {\n    display: flex;\n    flex-direction: row;\n    height: 40px;\n    width: 557px;\n    background-color: #f2f2f2;\n}\n\n.flex-container-interaction {\n    display: flex;\n    flex-direction: row;\n    height: 33px;\n    width: 175px;\n    padding-top: 3px;\n    padding-bottom: 4px;\n}\n\n.flex-container-commentbar-interaction {\n    display: flex;\n    flex-direction: column;\n    height: 89px;\n    width: 559px;\n    padding-top: 3px;\n}\n\n.artistPic {\n    height: 120px;\n    width: 120px;\n    border-radius: 50%;\n}\n\n.flex-container-artist {\n    display: flex;\n    flex-direction: column;\n    height: 250px;\n    width: 120px;\n    padding-right:30px;\n}\n\n.flex-container-stats {\n    display: flex;\n    flex-direction: row;\n    justify-content: right;\n    height: 33px;\n    width: 382px;\n    margin-left: 210px;\n    margin-top: 8px;\n}\n\n.flex-container-interaction-bar {\n    display: flex;\n    flex-direction: row;\n    height: 33px;\n    width: 557px;\n}\n\n.flex-lower {\n    display: flex;\n    flex-direction: row;\n    height: 33px;\n    width: 557px;\n}\n\n.rack {\n    margin-left: 25px;\n    font-size: 14px;\n}\n\n.likes {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);\n    background-repeat: no-repeat;\n    background-position: center;\n    border-radius: 15%;\n    margin-right: 5px;\n    padding-top: 2px;\n    padding-bottom: 2px;\n    padding-left: 11px;\n    padding-right: 10px;\n    height: 26px;\n    width: 31px;\n}\n\n.reposts {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfcmVwb3N0PC90aXRsZT48cGF0aCBkPSJNMiA2djVjMCAxLjEwNS45MDIgMiAyLjAwOSAyaDYuOTg3SDEwbC0yLTJINFY2aC0uNUg2TDMgMyAwIDZoMnptNC0zaC0uOTk2IDYuOTg3QzEzLjA5OCAzIDE0IDMuODk1IDE0IDV2NWgtMlY1SDhMNiAzem0xMCA3aC02bDMgMyAzLTN6IiBmaWxsPSIjMjIyIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);\n    background-repeat: no-repeat;\n    background-position: center;\n    border-radius: 15%;\n    margin-right: 5px;\n    padding-top: 2px;\n    padding-bottom: 2px;\n    padding-left: 11px;\n    padding-right: 10px;\n    height: 26px;\n    width: 31px;\n}\n\n.share {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c2hhcmU8L3RpdGxlPjxnIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEyIDNDOC4wMzIgMyA3IDQuOCA3IDcuOGMxLjY0Mi0zIDQuMTU3LTIuNzk1IDUtMi43OTVWM3ptMC0ydjZsMy0zLTMtM3oiLz48cGF0aCBkPSJNMTQgN3Y0YTIgMiAwIDAgMS0yLjAwOSAySDQuMDFBMi4wMDYgMi4wMDYgMCAwIDEgMiAxMVY1YTIgMiAwIDAgMSAyLjAwOS0yaDMuMTlhNS45MzMgNS45MzMgMCAwIDAtMS4zODMgMkg0djZoOFY5bDItMnptLTMtMmgtLjA0bC4wNC0uMDFWNXoiLz48L2c+PC9zdmc+);\n    background-repeat: no-repeat;\n    background-position: center;\n    border-radius: 15%;\n    margin-right: 5px;\n    padding-top: 2px;\n    padding-bottom: 2px;\n    padding-left: 11px;\n    padding-right: 10px;\n    height: 26px;\n    width: 31px;\n}\n\n.artistName {\n    width: 139.73px;\n    height: 16px;\n    font-size: 14px;\n    font-weight: light;\n}\n\n.followButton {\n    height: 22px;\n    width: 49.94px;\n    background-color: #ff5500;\n    color: white;\n    border-radius: 15%;\n    margin-top: 8px;\n    margin-bottom: 9px;\n}\n\n.next{\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoMjB2MjBIMHoiLz48cGF0aCBmaWxsPSIjMjIyIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik00IDloMTB2Mkg0Vjl6bTAgNGgxMHYySDR2LTJ6bTAtOGg4djJINFY1em0xMC00bDQgMy00IDNWMXoiLz48L2c+PC9zdmc+);\n    background-repeat: no-repeat;\n    background-position: center;\n    border-radius: 15%;\n    margin-right: 5px;\n    padding-top: 2px;\n    padding-bottom: 2px;\n    padding-left: 11px;\n    padding-right: 10px;\n    height: 26px;\n    width: 31px;\n}\n\n.more{\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDE0IDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPm1vcmU8L3RpdGxlPjxnIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiLz48Y2lyY2xlIGN4PSI3IiBjeT0iMiIgcj0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMiIgcj0iMiIvPjwvZz48L3N2Zz4=);\n    background-repeat: no-repeat;\n    background-position: center;\n    border-radius: 15%;\n    margin-right: 5px;\n    padding-top: 2px;\n    padding-bottom: 2px;\n    padding-left: 11px;\n    padding-right: 10px;\n    height: 26px;\n    width: 31px;\n}\n\n.followercount {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0icmdiYSgxNTMsIDE1MywgMTUzLCAwLjcpIiBkPSJNMTguNCAxOC41bDIuNSA1IC4yLjVIMjhsLTIuMS00LjMtNC4xLTEuNXYtMi41YzEuMi0xLjEgMS44LTMuMiAxLjgtNS4xIDAtMi4xLTItMy42LTMuNS0zLjZzLTMuNSAxLjYtMy41IDMuNmMwIDEuOS41IDQgMS44IDUuMXYyLjVoLS4xbC4xLjN6Ii8+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTE3LjUgMTlsLTUtMS44di0zYzEuNC0xLjIgMi0zLjggMi01LjkgMC0yLjQtMi4zLTQuMy00LTQuMy0xLjcgMC00IDEuOC00IDQuMyAwIDIuMi42IDQuNyAyIDUuOXYzbC01IDEuOEwxIDI0aDE5bC0yLjUtNXoiLz48L3N2Zz4=);\n}\n\n.plays {\n    color: grey;\n    font-size: 12px;\n    width: 49px;\n    height: 16px;\n}\n\n.plays-icon {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfcGxheSA0PC90aXRsZT48cGF0aCBkPSJNNCAxM1YzbDkgNS05IDV6IiBmaWxsPSIjOTk5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);\n    display: inline-block;\n    right: 100%;\n    height: 16px;\n    width: 16px;\n}\n\n\n.interaction-tiny-flex {\n    display: flex;\n    flex-direction: row;\n}\n\n.likes-icon {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);\n    display: inline-block;\n    right: 100%;\n    height: 16px;\n    width: 16px;\n}\n\n.likes-stats {\n    color: grey;\n    font-size: 12px;\n    cursor: pointer;\n    width: 49px;\n    height: 16px;\n}\n\n.reposts-icon {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfcmVwb3N0PC90aXRsZT48cGF0aCBkPSJNMiA2djVjMCAxLjEwNS45MDIgMiAyLjAwOSAyaDYuOTg3SDEwbC0yLTJINFY2aC0uNUg2TDMgMyAwIDZoMnptNC0zaC0uOTk2IDYuOTg3QzEzLjA5OCAzIDE0IDMuODk1IDE0IDV2NWgtMlY1SDhMNiAzem0xMCA3aC02bDMgMyAzLTN6IiBmaWxsPSIjOTk5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);\n    display: inline-block;\n    right: 100%;\n    height: 16px;\n    width: 16px;\n}\n\n.reposts-stats {\n    color: grey;\n    font-size: 12px;\n    cursor: pointer;\n    width: 49px;\n    height: 16px;\n}\n\n\n\n.fol-stats {\n    color: grey;\n    font-size: 12px;\n    width: 30px;\n    height: 14px;\n    margin-right: 9px;\n\n}\n\n.stats-artist {\n    display: flex;\n    flex-direction: row;\n    width: 120px;\n    height: 9px;\n    padding-top: 9px;\n    padding-bottom: 9px;\n}\n\n.report-icon {\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAnElEQVR4AZXNUQqDMBCE4TlWKApbiGBEpVYphQb6knvkaDnalLWK60uhfjA+5CfBX1+SBAvJiPKmCc7HizwZaQJ73MvEucx4FRtsPy+BA8c84pHtDetUcmXDwC53uGf7BBKcXFhTg7a0uJWFR4B0ChoMnLgGEhGBqEwQuAayQOmoLaihQS89vnQ2+w1ePHbwhgaVVDjoGE4cLLifPnBzeJR4+XAqAAAAAElFTkSuQmCC);\n    background-repeat: no-repeat;\n    height: 20px;\n    width: 20px;\n    font-size: 12px;\n}\n\n.flex-container-report {\n    display: flex;\n    flex-direction: row;\n}\n\n.report {\n    font-size: 12px;\n}\n\n.track-info {\n    font-size: 14px;\n}\n\n.tags-container {\n    width: 409px;\n    height: 29px;\n}\n\n.tags {\n    background-color: #999999;\n    color: white;\n    border-radius: 12px;\n    margin-bottom: 20px;\n    font-size: 14px;\n}\n\n.released-by {\n    width:409px;\n    height: 18px;\n    margin-top: 10px;\n}\n\n.track-top {\n    margin-top:10px;\n}\n\n.track-bottom {\n    margin-bottom:10px;\n}\n\n.flex-lower-right {\n    display: flex;\n    flex-direction: column;\n}\n\n.comments-stats {\n    color: grey;\n    font-size: 12px;\n    width: 67px;\n    height: 16px;\n    padding-top:2px;\n}\n\n.comments-component {\n    margin-top: 20px;\n    padding-bottom: 7px;\n    display: flex;\n    flex-direction: column;    \n}\n\n.flex-row {\n    display: flex;\n    flex-direction: row;    \n}\n\n.comment-pic {\n    height: 40px;\n    width: 40px;\n    border-radius: 50%;\n    margin-right: 10px;\n}\n\n.flex-comment-container-top-bar-name {\n    font-size: 12px;\n    color: #999999;\n    margin-right: 2px;\n}\n\n.at {\n    font-size:11px;\n    color: #CCCCCC;\n    margin-right: 2px;\n}\n\n.flex-comment-container-top-bar-time {\n    font-size: 11px;\n    color: #999999;\n    margin-right: 162px;\n}\n\n.flex-comment-container-top-bar-posted {\n    font-size: 11px;\n    color: #999999;\n}\n\n.flex-comment-container-top-bar {\n    display: flex;\n    flex-direction: row;\n}\n\n.comment-text-asi {\n    font-size: 12px;\n    color: #333333;\n}\n\n.comment-container-asi {\n    display: flex;\n    flex-direction: row;\n    margin-top: 10px;\n    margin-bottom: 10px;\n    margin-right: 10px;\n}", ""]);
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3158,7 +3216,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 /*!
@@ -3175,7 +3233,7 @@ module.exports = function isBuffer (obj) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3194,7 +3252,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3219,7 +3277,7 @@ var React = __webpack_require__(2);
 var _assign = __webpack_require__(4);
 var Scheduler = __webpack_require__(15);
 var checkPropTypes = __webpack_require__(14);
-var tracing = __webpack_require__(51);
+var tracing = __webpack_require__(52);
 
 // Do not require this module directly! Use normal `invariant` calls with
 // template literal strings. The messages will be converted to ReactError during
@@ -31128,7 +31186,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31428,7 +31486,7 @@ rendererPackageName:"react-dom"});var xk={default:wk},yk=xk&&wk||xk;module.expor
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33768,7 +33826,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33800,7 +33858,7 @@ isValidElement:N,version:"16.10.2",unstable_withSuspenseConfig:function(a,b){var
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34237,7 +34295,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34254,7 +34312,7 @@ Object.defineProperty(exports,"__esModule",{value:!0});var b=0;exports.__interac
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35284,7 +35342,7 @@ exports.unstable_Profiling = unstable_Profiling;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35313,22 +35371,22 @@ exports.unstable_pauseExecution=function(){};exports.unstable_getFirstCallbackNo
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(48);
+  module.exports = __webpack_require__(49);
 } else {
-  module.exports = __webpack_require__(47);
+  module.exports = __webpack_require__(48);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35614,64 +35672,6 @@ module.exports = function (list, options) {
     }
   };
 };
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ShowComments = function ShowComments(props) {
-  console.log(props);
-  return _react2.default.createElement(
-    'div',
-    null,
-    props.allComments.map(function (comment) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          null,
-          'Username '
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          comment.username
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          'content '
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          comment.content
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          '-----------------'
-        )
-      );
-    })
-  );
-};
-
-exports.default = ShowComments;
 
 /***/ })
 /******/ ]);

@@ -17,6 +17,7 @@ const app = express();
 app.use(cors());
 
 // Serve static files
+app.use('/loaderio-6e3f8e85b6bcf44a65d9849485e22ebe.txt', express.static(path.join(__dirname, '../loaderio-6e3f8e85b6bcf44a65d9849485e22ebe.txt')));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/songs/:id', express.static(path.join(__dirname, '../public')));
 
